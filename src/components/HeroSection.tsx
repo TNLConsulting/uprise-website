@@ -58,7 +58,7 @@ const HeroSection = () => {
 
         {/* Subtitle */}
         <p
-          className="text-base sm:text-lg md:text-xl font-light tracking-wider mb-10 animate-fade-in"
+          className="text-sm sm:text-base font-light tracking-wider mb-10 animate-fade-in"
           style={{ color: "#A09080", animationDelay: "0.5s", opacity: 0 }}
         >
           Kinesitherapie · Groepslessen · Performance · Voeding

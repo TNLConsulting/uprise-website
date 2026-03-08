@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -56,6 +57,27 @@ const AboutSection = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Team CTA */}
+            <div className="mb-8">
+              <Link
+                to="/team"
+                className="inline-block px-6 py-3 text-sm font-bold tracking-[0.2em] uppercase border-2 rounded transition-all duration-300"
+                style={{ borderColor: "#D4920A", color: "#D4920A" }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.backgroundColor = "#D4920A";
+                  el.style.color = "#000";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.backgroundColor = "transparent";
+                  el.style.color = "#D4920A";
+                }}
+              >
+                Ontdek ons team →
+              </Link>
             </div>
 
             {/* Address */}
