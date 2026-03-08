@@ -131,6 +131,44 @@ const Groepslessen = () => {
         </div>
       </section>
 
+      {/* Video's */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#0D0D0D" }}>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs font-bold tracking-[0.4em] uppercase mb-4 text-center" style={{ color: "#D4920A" }}>
+            Bekijk het zelf
+          </p>
+          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-center mb-10" style={{ color: "#F5F0E8" }}>
+            In de praktijk
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
+            <div className="w-full max-w-xs">
+              <p className="text-sm font-semibold text-center mb-3" style={{ color: "#A09080" }}>Welke lessen zijn er?</p>
+              <div className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: "177.78%", border: "1px solid rgba(212,146,10,0.2)" }}>
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/CMc7SkuV-9M"
+                  title="Welke lessen zijn er?"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+            <div className="w-full max-w-xs">
+              <p className="text-sm font-semibold text-center mb-3" style={{ color: "#A09080" }}>WOD voorbeeld</p>
+              <div className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: "177.78%", border: "1px solid rgba(212,146,10,0.2)" }}>
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/ct-15xWU-NM"
+                  title="WOD voorbeeld"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Prijzen */}
       <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#111111" }}>
         <div className="max-w-6xl mx-auto">
