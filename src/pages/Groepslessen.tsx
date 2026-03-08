@@ -14,19 +14,18 @@ const CLASS_TYPES = [
   { name: "Personal Training", level: "1 on 1 of small group" },
 ];
 
-const PRICES = [
-  { name: "Maandabonnement Unlimited", price: "110€" },
-  { name: "Maandabonnement 15 credits", price: "100€" },
+const PRICES_LEFT = [
   { name: "Maandabonnement 9 credits", price: "85€" },
+  { name: "Maandabonnement 15 credits", price: "100€" },
+  { name: "Maandabonnement Unlimited", price: "110€" },
   { name: "Maandabonnement Open Gym", price: "70€" },
-  { name: "10 beurtenkaart", price: "125€" },
-  { name: "10 Kids beurtenkaart", price: "95€" },
+];
+
+const PRICES_RIGHT = [
   { name: "Drop In", price: "15€", note: "of T-shirt voor 25€" },
-  { name: "Personal Coaching", price: "70€/sessie" },
-  { name: "Small Group CORE Training 1 sessie", price: "25€" },
-  { name: "Small Group CORE Training 10 beurtenkaart", price: "225€" },
+  { name: "10 beurtenkaart", price: "125€" },
   { name: "Fundamentals 4 sessies", price: "250€" },
-  { name: "Ongevallenverzekering jaarlijks", price: "15€" },
+  { name: "Personal Coaching", price: "70€/sessie" },
 ];
 
 const SCHEDULE: Record<string, { time: string; class: string }[]> = {
@@ -141,32 +140,48 @@ const Groepslessen = () => {
           <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-center mb-12" style={{ color: "#F5F0E8" }}>
             Prijzen
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {PRICES.map((p) => (
-              <div
-                key={p.name}
-                className="rounded-lg p-5 flex items-center justify-between gap-4"
-                style={{
-                  background: "linear-gradient(145deg, #1A1410 0%, #111111 100%)",
-                  border: "1px solid rgba(212,146,10,0.12)",
-                }}
-              >
-                <div>
-                  <p className="text-sm font-semibold" style={{ color: "#F5F0E8" }}>
-                    {p.name}
-                  </p>
-                  {p.note && (
-                    <p className="text-xs mt-0.5" style={{ color: "#A09080" }}>
-                      {p.note}
-                    </p>
-                  )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Linkerkolom */}
+            <div className="flex flex-col gap-4">
+              {PRICES_LEFT.map((p) => (
+                <div
+                  key={p.name}
+                  className="rounded-lg p-5 flex items-center justify-between gap-4"
+                  style={{
+                    background: "linear-gradient(145deg, #1A1410 0%, #111111 100%)",
+                    border: "1px solid rgba(212,146,10,0.12)",
+                  }}
+                >
+                  <p className="text-sm font-semibold" style={{ color: "#F5F0E8" }}>{p.name}</p>
+                  <span className="text-lg font-black flex-shrink-0" style={{ color: "#D4920A" }}>{p.price}</span>
                 </div>
-                <span className="text-lg font-black flex-shrink-0" style={{ color: "#D4920A" }}>
-                  {p.price}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
+            {/* Rechterkolom */}
+            <div className="flex flex-col gap-4">
+              {PRICES_RIGHT.map((p) => (
+                <div
+                  key={p.name}
+                  className="rounded-lg p-5 flex items-center justify-between gap-4"
+                  style={{
+                    background: "linear-gradient(145deg, #1A1410 0%, #111111 100%)",
+                    border: "1px solid rgba(212,146,10,0.12)",
+                  }}
+                >
+                  <div>
+                    <p className="text-sm font-semibold" style={{ color: "#F5F0E8" }}>{p.name}</p>
+                    {p.note && <p className="text-xs mt-0.5" style={{ color: "#A09080" }}>{p.note}</p>}
+                  </div>
+                  <span className="text-lg font-black flex-shrink-0" style={{ color: "#D4920A" }}>{p.price}</span>
+                </div>
+              ))}
+            </div>
           </div>
+          {/* Verzekering nota */}
+          <p className="mt-6 text-xs text-center" style={{ color: "#A09080" }}>
+            ⚠️ Een <span style={{ color: "#F5F0E8" }}>jaarlijkse ongevallenverzekering (15€)</span> is verplicht voor alle leden. Je sluit die af via{" "}
+            <a href="https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap" target="_blank" rel="noopener noreferrer" style={{ color: "#D4920A" }}>deze link</a>.
+          </p>
         </div>
       </section>
 

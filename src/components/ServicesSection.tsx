@@ -25,7 +25,7 @@ const SERVICES = [
     title: "REFORMER PILATES",
     description:
       "Ontdek onze Reformer Pilates lessen bij Upform Studio — speciaal opgericht voor een optimale pilates-ervaring.",
-    cta: "Boek je sessie →",
+    cta: "Naar Upform Studio →",
     href: "https://www.upform.be",
     external: true,
   },
