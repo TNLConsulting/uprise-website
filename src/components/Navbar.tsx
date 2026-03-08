@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 
 const NAV_LINKS = [
   { label: "Home", href: "/", internal: true },
-  { label: "Kinesitherapie", href: "/kinesitherapie", internal: true },
-  { label: "Groepslessen", href: "/groepslessen", internal: true },
-  { label: "Performance", href: "/performance", internal: true },
-  { label: "Voeding", href: "/voeding", internal: true },
-  { label: "Reformer Pilates", href: "https://www.upform.be", internal: false },
+  { label: "Kinesitherapie", href: "/#services", internal: true },
+  { label: "Groepslessen", href: "/#services", internal: true },
+  { label: "Performance", href: "/#services", internal: true },
+  { label: "Voeding", href: "/#services", internal: true },
   { label: "Team", href: "/team", internal: true },
   { label: "Contact", href: "/#contact", internal: true },
 ];
@@ -47,18 +46,18 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-1 group"
             aria-label="Uprise home"
           >
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M6 22L22 6M22 6H10M22 6V18" stroke="#D4920A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
             <span
-              className="text-xl font-black tracking-widest uppercase"
+              className="text-lg font-black tracking-widest uppercase"
               style={{ color: "#F5F0E8", letterSpacing: "0.18em" }}
             >
               UPRISE
             </span>
+            <svg width="18" height="18" viewBox="0 0 28 28" fill="none">
+              <path d="M6 22L22 6M22 6H10M22 6V18" stroke="#D4920A" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </Link>
 
           {/* Desktop Nav Links */}
