@@ -11,7 +11,6 @@ export default defineConfig({
       overlay: false,
     },
   },
-  base: process.env.NODE_ENV === "production" ? "/uprise-website/" : "/",
   plugins: [react()],
   resolve: {
     alias: {
