@@ -179,8 +179,7 @@ const Groepslessen = () => {
           </div>
           {/* Verzekering nota */}
           <p className="mt-6 text-xs text-center" style={{ color: "#A09080" }}>
-            ⚠️ Een <span style={{ color: "#F5F0E8" }}>jaarlijkse ongevallenverzekering (15€)</span> is verplicht voor alle leden. Je sluit die af via{" "}
-            <a href="https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap" target="_blank" rel="noopener noreferrer" style={{ color: "#D4920A" }}>deze link</a>.
+            ⚠️ Een <span style={{ color: "#F5F0E8" }}>jaarlijkse ongevallenverzekering (15€)</span> is verplicht voor alle leden.
           </p>
         </div>
       </section>
