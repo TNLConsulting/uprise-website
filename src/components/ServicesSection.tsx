@@ -3,7 +3,7 @@ import { Activity, Users, Layers, TrendingUp, Apple } from "lucide-react";
 const SERVICES = [
   {
     icon: Activity,
-    title: "KINÉ",
+    title: "KINESITHERAPIE",
     description:
       "Acute en chronische blessures, revalidatie en preventief werken — onze kinesitherapeuten staan voor je klaar.",
     cta: "Boek een afspraak",
@@ -21,9 +21,9 @@ const SERVICES = [
     icon: Layers,
     title: "REFORMER PILATES",
     description:
-      "Versterk je core, verbeter je mobiliteit en herstel sneller met onze begeleide Reformer Pilates sessies.",
-    cta: "Boek je sessie",
-    href: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap",
+      "Ontdek onze Reformer Pilates lessen bij Upform Studio — speciaal opgericht voor een optimale pilates-ervaring.",
+    cta: "Ontdek Upform Studio",
+    href: "https://www.upform.be",
   },
   {
     icon: TrendingUp,

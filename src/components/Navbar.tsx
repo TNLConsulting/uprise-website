@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowUp } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
-  { label: "Kiné", href: "#services" },
+  { label: "Kinesitherapie", href: "#services" },
   { label: "Groepslessen", href: "#services" },
-  { label: "Reformer Pilates", href: "#services" },
   { label: "Performance", href: "#services" },
   { label: "Voeding", href: "#services" },
   { label: "Team", href: "#about" },
@@ -16,10 +15,6 @@ const CTA_BUTTONS = [
   {
     label: "KINÉ AFSPRAAK",
     href: "https://altagenda.crossuite.com/Uprise/l/n5r4v5z5j454t2e48454/o/54135474r253p2b48494944354u25464a4/t/c42384340353x274c424f4",
-  },
-  {
-    label: "REFORMER PILATES",
-    href: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap",
   },
   {
     label: "GRATIS PROEFLES",
@@ -53,17 +48,16 @@ const Navbar = () => {
             className="flex items-center gap-2 group"
             aria-label="Uprise home"
           >
-            <div
-              className="w-8 h-8 flex items-center justify-center rounded"
-              style={{ backgroundColor: "#D4920A" }}
-            >
-              <ArrowUp className="w-5 h-5 text-black" strokeWidth={3} />
-            </div>
             <span
-              className="text-xl font-black tracking-widest uppercase"
+              className="text-xl font-black tracking-widest uppercase flex items-center gap-1"
               style={{ color: "#F5F0E8", letterSpacing: "0.18em" }}
             >
               UPRISE
+              <ArrowUpRight
+                className="w-5 h-5 inline-block"
+                style={{ color: "#D4920A" }}
+                strokeWidth={3}
+              />
             </span>
           </a>
 

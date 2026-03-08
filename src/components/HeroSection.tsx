@@ -39,7 +39,7 @@ const HeroSection = () => {
 
         {/* Main Tagline */}
         <h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-none tracking-tight mb-6 animate-fade-in"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-none tracking-tight mb-6 animate-fade-in"
           style={{ color: "#F5F0E8", animationDelay: "0.3s", opacity: 0 }}
         >
           We rise by
@@ -61,7 +61,7 @@ const HeroSection = () => {
           className="text-base sm:text-lg md:text-xl font-light tracking-wider mb-10 animate-fade-in"
           style={{ color: "#A09080", animationDelay: "0.5s", opacity: 0 }}
         >
-          Kinesitherapie · Groepslessen · Reformer Pilates · Performance · Voeding
+          Kinesitherapie · Groepslessen · Performance · Voeding
         </p>
 
         {/* CTA Buttons */}
