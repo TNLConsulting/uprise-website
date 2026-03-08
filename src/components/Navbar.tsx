@@ -3,13 +3,13 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/", internal: true },
-  { label: "Kinesitherapie", href: "/#services", internal: true },
-  { label: "Groepslessen", href: "/#services", internal: true },
-  { label: "Performance", href: "/#services", internal: true },
-  { label: "Voeding", href: "/#services", internal: true },
-  { label: "Team", href: "/team", internal: true },
-  { label: "Contact", href: "/#contact", internal: true },
+  { label: "Home", href: "/", type: "route" },
+  { label: "Kinesitherapie", href: "/#services", type: "hash" },
+  { label: "Groepslessen", href: "/#services", type: "hash" },
+  { label: "Performance", href: "/#services", type: "hash" },
+  { label: "Voeding", href: "/#services", type: "hash" },
+  { label: "Team", href: "/team", type: "route" },
+  { label: "Contact", href: "/#contact", type: "hash" },
 ];
 
 const CTA_BUTTONS = [
@@ -63,7 +63,7 @@ const Navbar = () => {
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {NAV_LINKS.map((link) =>
-              link.internal ? (
+              link.type === "route" ? (
                 <Link
                   key={link.label}
                   to={link.href}
@@ -82,8 +82,6 @@ const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-sm font-medium transition-colors duration-200"
                   style={{ color: "#A09080" }}
                   onMouseEnter={(e) =>
@@ -148,7 +146,7 @@ const Navbar = () => {
         >
           <div className="px-4 py-6 space-y-4">
             {NAV_LINKS.map((link) =>
-              link.internal ? (
+              link.type === "route" ? (
                 <Link
                   key={link.label}
                   to={link.href}
@@ -162,8 +160,6 @@ const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="block text-base font-medium py-2"
                   style={{ color: "#F5F0E8" }}
                   onClick={() => setIsOpen(false)}

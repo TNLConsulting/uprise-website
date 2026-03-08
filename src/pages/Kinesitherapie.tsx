@@ -20,6 +20,52 @@ const SERVICES = [
   },
 ];
 
+const AANBOD = [
+  "(Sport)kinesitherapie",
+  "Manuele therapie",
+  "Dry needling",
+  "Taping",
+  "Functionele oefentherapie",
+  "Blessure preventie",
+  "Performance training",
+  "Pre-season sportspecifieke training",
+  "Pre- en postnatale begeleiding",
+  "Sportmassage",
+];
+
+const PRIJZEN = [
+  {
+    title: "Courante pathologie",
+    price: "40€",
+    unit: "/ sessie",
+    details: [
+      { label: "Terugbetaling mutualiteit", value: "19,05€/sessie" },
+      { label: "Jaarlijkse dossierkost", value: "7,38€ (terugbetaling 5,54€)" },
+    ],
+    terugbetaling: true,
+  },
+  {
+    title: "Fa, Fb of E pathologie",
+    price: "40€",
+    unit: "/ sessie",
+    details: [
+      { label: "Terugbetaling mutualiteit", value: "19,61€/sessie" },
+      { label: "Bijkomende dossierkost", value: "33,75€ (terugbetaling 25,32€)" },
+    ],
+    terugbetaling: true,
+  },
+  {
+    title: "Sportmassage",
+    price: "40€",
+    unit: "/ 30 min",
+    details: [
+      { label: "60 minuten", value: "75€" },
+      { label: "Terugbetaling", value: "Geen terugbetaling" },
+    ],
+    terugbetaling: false,
+  },
+];
+
 const Kinesitherapie = () => {
   return (
     <div style={{ backgroundColor: "#0D0D0D", minHeight: "100vh" }}>
@@ -60,6 +106,102 @@ const Kinesitherapie = () => {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Aanbod */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#0D0D0D" }}>
+        <div className="max-w-6xl mx-auto">
+          <p className="text-xs font-bold tracking-[0.4em] uppercase mb-3" style={{ color: "#D4920A" }}>
+            Wat we aanbieden
+          </p>
+          <h2 className="text-2xl md:text-3xl font-black uppercase mb-10" style={{ color: "#F5F0E8" }}>
+            Aanbod
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {AANBOD.map((item) => (
+              <span
+                key={item}
+                className="px-4 py-2 rounded-full text-sm font-medium"
+                style={{
+                  backgroundColor: "rgba(212,146,10,0.1)",
+                  border: "1px solid rgba(212,146,10,0.3)",
+                  color: "#F5F0E8",
+                }}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Prijzen */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#111111" }}>
+        <div className="max-w-6xl mx-auto">
+          <p className="text-xs font-bold tracking-[0.4em] uppercase mb-3" style={{ color: "#D4920A" }}>
+            Transparante tarieven
+          </p>
+          <h2 className="text-2xl md:text-3xl font-black uppercase mb-10" style={{ color: "#F5F0E8" }}>
+            Prijzen
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {PRIJZEN.map((p) => (
+              <div
+                key={p.title}
+                className="rounded-lg p-6 flex flex-col gap-4"
+                style={{
+                  backgroundColor: "#1A1410",
+                  border: "1px solid rgba(212,146,10,0.2)",
+                }}
+              >
+                <h3 className="text-sm font-black uppercase tracking-widest" style={{ color: "#A09080" }}>
+                  {p.title}
+                </h3>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-black" style={{ color: "#D4920A" }}>
+                    {p.price}
+                  </span>
+                  <span className="text-sm" style={{ color: "#A09080" }}>
+                    {p.unit}
+                  </span>
+                </div>
+                <div
+                  className="w-8 h-0.5 rounded-full"
+                  style={{ backgroundColor: "#D4920A" }}
+                />
+                <div className="flex flex-col gap-2">
+                  {p.details.map((d) => (
+                    <div key={d.label}>
+                      <p className="text-xs font-medium" style={{ color: "#6B5C4C" }}>
+                        {d.label}
+                      </p>
+                      <p className="text-sm" style={{ color: "#A09080" }}>
+                        {d.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Notes */}
+          <div
+            className="rounded-lg p-6 flex flex-col gap-3"
+            style={{
+              backgroundColor: "rgba(212,146,10,0.05)",
+              border: "1px solid rgba(212,146,10,0.15)",
+            }}
+          >
+            <p className="text-sm leading-relaxed" style={{ color: "#A09080" }}>
+              ⚠️ Elk consult dat niet tijdig wordt geannuleerd (min 24u op voorhand) met een geldige reden, zal worden aangerekend.
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: "#A09080" }}>
+              ℹ️ Alle terugbetalingstarieven kan u terugvinden bij jouw mutualiteit of via het RIZIV.
+            </p>
           </div>
         </div>
       </section>

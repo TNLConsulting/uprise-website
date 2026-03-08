@@ -2,66 +2,90 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import ContactFooter from "@/components/ContactFooter";
 
-const TEAM_GROUPS = [
+const FOUNDERS = [
   {
-    label: "Founders",
-    count: 2,
+    name: "Laura Quirin",
+    role: "Sport Physio · Headcoach",
+    photo: "https://static.wixstatic.com/media/95bc3b_3cb6a7e72f494bdba992d203ea74cf9d~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85/IMG-20231005-WA0015.jpg",
   },
   {
-    label: "Kinesitherapeuten",
-    count: 3,
-  },
-  {
-    label: "Coaches",
-    count: 3,
-  },
-  {
-    label: "Voedingsdeskundige",
-    count: 1,
+    name: "Tom Schallenbergh",
+    role: "Headcoach · Performance Coach",
+    photo: "https://static.wixstatic.com/media/95bc3b_f8c111ee856f42a1acb6626f22fb83d2~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85/IMG-20231005-WA0018.jpg",
   },
 ];
 
-const PlaceholderCard = ({ label }: { label: string }) => (
+const TEAM = [
+  {
+    name: "Laura Markovitz",
+    role: "Sport Physio & Personal Trainer",
+    photo: "https://static.wixstatic.com/media/95bc3b_cc1546209ec84587a2caa6ce6abada23~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg",
+  },
+  {
+    name: "Marieke Francois",
+    role: "Voedingsdeskundige",
+    photo: "https://static.wixstatic.com/media/95bc3b_fab100487d9e4c5dba63ff505b527e5c~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg",
+  },
+  {
+    name: "Corry Coninckx",
+    role: "Coach",
+    photo: "https://static.wixstatic.com/media/95bc3b_59d37f5dffbb4bc38f20c81d98992c63~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg",
+  },
+  {
+    name: "Ruben Goossens",
+    role: "Coach",
+    photo: "https://static.wixstatic.com/media/95bc3b_1c544003467b4794bdb55ea3d4727b1c~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg",
+  },
+  {
+    name: "Kenneth Franckx",
+    role: "Coach",
+    photo: "https://static.wixstatic.com/media/95bc3b_1b44815ebcfc42bb99517915e9c6d2c9~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg",
+  },
+  {
+    name: "Tatjana Decaesteker",
+    role: "Coach",
+    photo: "https://static.wixstatic.com/media/95bc3b_711516ddf21e47f6bec18b8e516841b3~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg",
+  },
+  {
+    name: "Maarten Verbinnen",
+    role: "Coach",
+    photo: "https://static.wixstatic.com/media/95bc3b_98c2a53d89004a50a9b17525d5310042~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg",
+  },
+];
+
+interface TeamMember {
+  name: string;
+  role: string;
+  photo: string;
+}
+
+const TeamCard = ({ member }: { member: TeamMember }) => (
   <div
-    className="w-full aspect-[3/4] rounded-lg flex items-end relative overflow-hidden"
+    className="rounded-lg overflow-hidden flex flex-col group transition-all duration-300"
     style={{
-      background: "linear-gradient(135deg, #1A1410 0%, #0D0D0D 70%, #1A1410 100%)",
+      backgroundColor: "#1A1410",
       border: "1px solid rgba(212,146,10,0.15)",
     }}
+    onMouseEnter={(e) => {
+      (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,146,10,0.6)";
+    }}
+    onMouseLeave={(e) => {
+      (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,146,10,0.15)";
+    }}
   >
-    {/* Grid pattern */}
-    <div
-      className="absolute inset-0 opacity-5"
-      style={{
-        backgroundImage:
-          "repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(212,146,10,0.5) 40px, rgba(212,146,10,0.5) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212,146,10,0.5) 40px, rgba(212,146,10,0.5) 41px)",
-      }}
-    />
-
-    {/* Center icon */}
-    <div className="absolute inset-0 flex items-center justify-center">
-      <div
-        className="w-16 h-16 rounded-full flex items-center justify-center"
-        style={{ backgroundColor: "rgba(212,146,10,0.1)" }}
-      >
-        <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="#D4920A" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-        </svg>
-      </div>
+    <div className="w-full overflow-hidden" style={{ height: "300px" }}>
+      <img
+        src={member.photo}
+        alt={member.name}
+        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+      />
     </div>
-
-    {/* Bottom label */}
-    <div
-      className="relative z-10 w-full px-4 py-4"
-      style={{
-        background: "linear-gradient(to top, rgba(0,0,0,0.8), transparent)",
-      }}
-    >
-      <p className="text-xs font-medium tracking-widest uppercase" style={{ color: "#A09080" }}>
-        Team foto
+    <div className="px-5 py-4">
+      <p className="text-base font-bold" style={{ color: "#F5F0E8" }}>
+        {member.name}
       </p>
-      <p className="text-sm font-bold mt-0.5" style={{ color: "#F5F0E8" }}>
-        {label}
+      <p className="text-sm mt-1" style={{ color: "#A09080" }}>
+        {member.role}
       </p>
     </div>
   </div>
@@ -87,31 +111,42 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Team grid by group */}
-      {TEAM_GROUPS.map((group) => (
-        <section
-          key={group.label}
-          className="py-12 px-4 sm:px-6 lg:px-8"
-          style={{ backgroundColor: "#0D0D0D" }}
-        >
-          <div className="max-w-6xl mx-auto">
-            <h2
-              className="text-xl font-black uppercase tracking-widest mb-8"
-              style={{ color: "#D4920A" }}
-            >
-              {group.label}
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {Array.from({ length: group.count }).map((_, i) => (
-                <PlaceholderCard key={i} label={group.label} />
-              ))}
-            </div>
+      {/* Founders */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#0D0D0D" }}>
+        <div className="max-w-6xl mx-auto">
+          <h2
+            className="text-xl font-black uppercase tracking-widest mb-8"
+            style={{ color: "#D4920A" }}
+          >
+            Founders
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl">
+            {FOUNDERS.map((member) => (
+              <TeamCard key={member.name} member={member} />
+            ))}
           </div>
-        </section>
-      ))}
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#111111" }}>
+        <div className="max-w-6xl mx-auto">
+          <h2
+            className="text-xl font-black uppercase tracking-widest mb-8"
+            style={{ color: "#D4920A" }}
+          >
+            Team
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {TEAM.map((member) => (
+              <TeamCard key={member.name} member={member} />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 text-center" style={{ backgroundColor: "#111111" }}>
+      <section className="py-20 px-4 text-center" style={{ backgroundColor: "#0D0D0D" }}>
         <p className="text-xs font-bold tracking-[0.4em] uppercase mb-4" style={{ color: "#D4920A" }}>
           Vragen?
         </p>
