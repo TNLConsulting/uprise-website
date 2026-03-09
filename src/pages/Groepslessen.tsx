@@ -33,8 +33,9 @@ const SCHEDULE: Record<string, { time: string; class: string }[]> = {
     { time: "07u00", class: "WOD" },
     { time: "09u00", class: "WOD" },
     { time: "12u00", class: "WOD" },
+    { time: "17u00", class: "WOD" },
     { time: "18u00", class: "WOD" },
-    { time: "19u00", class: "OLY" },
+    { time: "19u00", class: "WOD" },
     { time: "20u00", class: "WOD" },
   ],
   Di: [
@@ -47,10 +48,10 @@ const SCHEDULE: Record<string, { time: string; class: string }[]> = {
     { time: "07u00", class: "WOD" },
     { time: "09u00", class: "WOD" },
     { time: "12u00", class: "WOD" },
-    { time: "13u15", class: "KIDS WOD" },
+    { time: "17u00", class: "WOD" },
     { time: "18u00", class: "WOD" },
     { time: "19u00", class: "OLY" },
-    { time: "20u00", class: "HIIT" },
+    { time: "20u00", class: "WOD" },
   ],
   Do: [
     { time: "09u00", class: "WOD" },
@@ -70,13 +71,9 @@ const SCHEDULE: Record<string, { time: string; class: string }[]> = {
     { time: "10u00", class: "WOD" },
     { time: "11u00", class: "OLY" },
   ],
-  Zo: [
-    { time: "09u30", class: "TEAMWOD" },
-    { time: "10u30", class: "COMPETITION TEAMTRAINING" },
-  ],
 };
 
-const DAYS = ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"];
+const DAYS = ["Ma", "Di", "Wo", "Do", "Vr", "Za"];
 
 const Groepslessen = () => {
   const [activeDay, setActiveDay] = useState("Ma");
