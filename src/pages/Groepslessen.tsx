@@ -71,9 +71,13 @@ const SCHEDULE: Record<string, { time: string; class: string }[]> = {
     { time: "10u00", class: "WOD" },
     { time: "11u00", class: "OLY" },
   ],
+  Zo: [
+    { time: "09u30", class: "TEAMWOD" },
+    { time: "10u30", class: "COMPETITION" },
+  ],
 };
 
-const DAYS = ["Ma", "Di", "Wo", "Do", "Vr", "Za"];
+const DAYS = ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"];
 
 const Groepslessen = () => {
   const [activeDay, setActiveDay] = useState("Ma");
