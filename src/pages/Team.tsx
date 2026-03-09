@@ -47,6 +47,11 @@ const TEAM = [
     photo: "https://static.wixstatic.com/media/95bc3b_711516ddf21e47f6bec18b8e516841b3~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg",
   },
   {
+    name: "Glen",
+    role: "Coach",
+    photo: "/glen.jpg",
+  },
+  {
     name: "Maarten Verbinnen",
     role: "Coach",
     photo: "https://static.wixstatic.com/media/95bc3b_98c2a53d89004a50a9b17525d5310042~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg",
