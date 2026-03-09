@@ -52,34 +52,16 @@ const Voeding = () => {
               </div>
             </div>
 
-            {/* Photo placeholder */}
+            {/* Photo Marieke */}
             <div
-              className="w-full aspect-[3/4] rounded-lg flex items-center justify-center relative overflow-hidden"
-              style={{
-                background: "linear-gradient(135deg, #1A1410 0%, #0D0D0D 50%, #1A1410 100%)",
-                border: "1px solid rgba(212,146,10,0.2)",
-              }}
+              className="w-full aspect-[3/4] rounded-lg relative overflow-hidden"
+              style={{ border: "1px solid rgba(212,146,10,0.2)" }}
             >
-              <div
-                className="absolute inset-0 opacity-10"
-                style={{
-                  backgroundImage:
-                    "repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(212,146,10,0.3) 40px, rgba(212,146,10,0.3) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212,146,10,0.3) 40px, rgba(212,146,10,0.3) 41px)",
-                }}
+              <img
+                src="https://static.wixstatic.com/media/95bc3b_fab100487d9e4c5dba63ff505b527e5c~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg"
+                alt="Marieke Francois — Voedingsdeskundige"
+                className="w-full h-full object-cover object-top"
               />
-              <div className="relative z-10 text-center">
-                <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
-                  style={{ backgroundColor: "rgba(212,146,10,0.15)" }}
-                >
-                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#D4920A" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <p className="text-sm font-medium tracking-widest uppercase" style={{ color: "#A09080" }}>
-                  Foto Marieke
-                </p>
-              </div>
             </div>
           </div>
         </div>
