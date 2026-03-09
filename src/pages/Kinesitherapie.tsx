@@ -36,30 +36,30 @@ const AANBOD = [
 const PRIJZEN = [
   {
     title: "Courante pathologie",
-    price: "40€",
+    price: "€40",
     unit: "/ sessie",
     details: [
-      { label: "Terugbetaling mutualiteit", value: "19,05€/sessie" },
-      { label: "Jaarlijkse dossierkost", value: "7,38€ (terugbetaling 5,54€)" },
+      { label: "Terugbetaling mutualiteit", value: "€19,05/sessie" },
+      { label: "Jaarlijkse dossierkost", value: "€7,38 (terugbetaling €5,54)" },
     ],
     terugbetaling: true,
   },
   {
     title: "Fa, Fb of E pathologie",
-    price: "40€",
+    price: "€40",
     unit: "/ sessie",
     details: [
-      { label: "Terugbetaling mutualiteit", value: "19,61€/sessie" },
-      { label: "Bijkomende dossierkost", value: "33,75€ (terugbetaling 25,32€)" },
+      { label: "Terugbetaling mutualiteit", value: "€19,61/sessie" },
+      { label: "Bijkomende dossierkost", value: "€33,75 (terugbetaling €25,32)" },
     ],
     terugbetaling: true,
   },
   {
     title: "Sportmassage",
-    price: "40€",
+    price: "€40",
     unit: "/ 30 min",
     details: [
-      { label: "60 minuten", value: "75€" },
+      { label: "60 minuten", value: "€75" },
       { label: "Terugbetaling", value: "Geen terugbetaling" },
     ],
     terugbetaling: false,

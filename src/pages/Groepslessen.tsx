@@ -15,17 +15,17 @@ const CLASS_TYPES = [
 ];
 
 const PRICES_LEFT = [
-  { name: "Maandabonnement 9 credits", price: "85€" },
-  { name: "Maandabonnement 15 credits", price: "100€" },
-  { name: "Maandabonnement Unlimited", price: "110€" },
-  { name: "Maandabonnement Open Gym", price: "70€" },
+  { name: "Maandabonnement 9 credits", price: "€85" },
+  { name: "Maandabonnement 15 credits", price: "€100" },
+  { name: "Maandabonnement Unlimited", price: "€110" },
+  { name: "Maandabonnement Open Gym", price: "€70" },
 ];
 
 const PRICES_RIGHT = [
-  { name: "Drop In", price: "15€", note: "of T-shirt voor 25€" },
-  { name: "10 beurtenkaart", price: "125€" },
-  { name: "Fundamentals 4 sessies", price: "250€" },
-  { name: "Personal Coaching", price: "70€/sessie" },
+  { name: "Drop In", price: "€15", note: "of T-shirt voor €25" },
+  { name: "10 beurtenkaart", price: "€125" },
+  { name: "Fundamentals 4 sessies", price: "€250" },
+  { name: "Personal Coaching", price: "€70/sessie" },
 ];
 
 const SCHEDULE: Record<string, { time: string; class: string }[]> = {
@@ -217,7 +217,7 @@ const Groepslessen = () => {
           </div>
           {/* Verzekering nota */}
           <p className="mt-6 text-xs text-center" style={{ color: "#A09080" }}>
-            ⚠️ Een <span style={{ color: "#F5F0E8" }}>jaarlijkse ongevallenverzekering (15€)</span> is verplicht voor alle leden.
+            ⚠️ Een <span style={{ color: "#F5F0E8" }}>jaarlijkse ongevallenverzekering (€15)</span> is verplicht voor alle leden.
           </p>
         </div>
       </section>
