@@ -145,24 +145,24 @@ const Groepslessen = () => {
             <div className="w-full max-w-xs">
               <p className="text-sm font-semibold text-center mb-3" style={{ color: "#A09080" }}>Welke lessen zijn er?</p>
               <div className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: "177.78%", border: "1px solid rgba(212,146,10,0.2)" }}>
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/CMc7SkuV-9M?playsinline=1&rel=0"
-                  title="Welke lessen zijn er?"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
+                <video
+                  className="absolute inset-0 w-full h-full object-cover"
+                  src="/welke-lessen.mp4"
+                  controls
+                  playsInline
+                  preload="metadata"
                 />
               </div>
             </div>
             <div className="w-full max-w-xs">
               <p className="text-sm font-semibold text-center mb-3" style={{ color: "#A09080" }}>WOD voorbeeld</p>
               <div className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: "177.78%", border: "1px solid rgba(212,146,10,0.2)" }}>
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/ct-15xWU-NM?playsinline=1&rel=0"
-                  title="WOD voorbeeld"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
+                <video
+                  className="absolute inset-0 w-full h-full object-cover"
+                  src="/wod.mp4"
+                  controls
+                  playsInline
+                  preload="metadata"
                 />
               </div>
             </div>
