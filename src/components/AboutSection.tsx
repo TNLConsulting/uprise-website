@@ -112,51 +112,17 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Right: Team Photo Placeholder */}
+          {/* Right: Team Photo */}
           <div className="relative">
             <div
-              className="w-full aspect-[4/3] rounded-lg flex items-center justify-center relative overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(135deg, #1A1410 0%, #0D0D0D 50%, #1A1410 100%)",
-                border: "1px solid rgba(212,146,10,0.2)",
-              }}
+              className="w-full aspect-[4/3] rounded-lg relative overflow-hidden"
+              style={{ border: "1px solid rgba(212,146,10,0.2)" }}
             >
-              {/* Decorative grid pattern */}
-              <div
-                className="absolute inset-0 opacity-10"
-                style={{
-                  backgroundImage:
-                    "repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(212,146,10,0.3) 40px, rgba(212,146,10,0.3) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(212,146,10,0.3) 40px, rgba(212,146,10,0.3) 41px)",
-                }}
+              <img
+                src="/team-foto.jpg"
+                alt="Uprise team"
+                className="w-full h-full object-cover"
               />
-              <div className="text-center relative z-10 px-8">
-                <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
-                  style={{ backgroundColor: "rgba(212,146,10,0.15)" }}
-                >
-                  <svg
-                    className="w-10 h-10"
-                    style={{ color: "#D4920A" }}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                </div>
-                <p
-                  className="text-sm font-medium tracking-widest uppercase"
-                  style={{ color: "#A09080" }}
-                >
-                  Team foto
-                </p>
-              </div>
             </div>
 
             {/* Decorative accent */}
