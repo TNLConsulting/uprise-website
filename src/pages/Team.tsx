@@ -33,7 +33,7 @@ const TEAM = [
   },
   {
     name: "Ruben Goossens",
-    role: "Coach",
+    role: "Coach · Performance Coach",
     photo: "https://static.wixstatic.com/media/95bc3b_1c544003467b4794bdb55ea3d4727b1c~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg",
   },
   {
