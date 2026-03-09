@@ -147,9 +147,9 @@ const Groepslessen = () => {
               <div className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: "177.78%", border: "1px solid rgba(212,146,10,0.2)" }}>
                 <iframe
                   className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/CMc7SkuV-9M"
+                  src="https://www.youtube.com/embed/CMc7SkuV-9M?playsinline=1&rel=0"
                   title="Welke lessen zijn er?"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 />
               </div>
@@ -159,9 +159,9 @@ const Groepslessen = () => {
               <div className="relative w-full rounded-lg overflow-hidden" style={{ paddingBottom: "177.78%", border: "1px solid rgba(212,146,10,0.2)" }}>
                 <iframe
                   className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/ct-15xWU-NM"
+                  src="https://www.youtube.com/embed/ct-15xWU-NM?playsinline=1&rel=0"
                   title="WOD voorbeeld"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 />
               </div>
