@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Mail, Facebook, Instagram, ArrowUp, Send } from "lucide-react";
+import { MapPin, Mail, Facebook, Instagram, Send } from "lucide-react";
 
 const ContactFooter = () => {
   const [formData, setFormData] = useState({
@@ -16,15 +16,27 @@ const ContactFooter = () => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Build mailto link as a simple fallback
-    const subject = encodeURIComponent("Contactformulier Uprise.be");
-    const body = encodeURIComponent(
-      `Voornaam: ${formData.voornaam}\nAchternaam: ${formData.achternaam}\nEmail: ${formData.email}\n\nVraag:\n${formData.vraag}`
-    );
-    window.open(`mailto:info@uprise.be?subject=${subject}&body=${body}`, "_blank");
-    setSubmitted(true);
+    try {
+      const response = await fetch("https://formspree.io/f/xvgogwrk", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          voornaam: formData.voornaam,
+          achternaam: formData.achternaam,
+          email: formData.email,
+          vraag: formData.vraag,
+        }),
+      });
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert("Er ging iets mis. Probeer opnieuw of stuur een mail naar info@uprise.be.");
+      }
+    } catch {
+      alert("Er ging iets mis. Controleer je internetverbinding.");
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -362,19 +374,16 @@ const ContactFooter = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             {/* Logo */}
-            <div className="flex items-center gap-2">
-              <div
-                className="w-6 h-6 flex items-center justify-center rounded"
-                style={{ backgroundColor: "#D4920A" }}
-              >
-                <ArrowUp className="w-4 h-4 text-black" strokeWidth={3} />
-              </div>
+            <div className="flex items-center gap-1">
               <span
                 className="text-sm font-black tracking-widest uppercase"
-                style={{ color: "#F5F0E8" }}
+                style={{ color: "#F5F0E8", letterSpacing: "0.18em" }}
               >
                 UPRISE
               </span>
+              <svg width="16" height="16" viewBox="0 0 28 28" fill="none">
+                <path d="M6 22L22 6M22 6H10M22 6V18" stroke="#D4920A" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
 
             {/* Copyright */}
