@@ -19,7 +19,7 @@ const ContactFooter = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://formspree.io/f/xvgogwrk", {
+      const response = await fetch("https://formspree.io/f/mbdzglqq", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
