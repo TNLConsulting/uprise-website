@@ -24,8 +24,8 @@ const PRICES_LEFT = [
 const PRICES_RIGHT = [
   { name: "Drop In", price: "€15", note: "of T-shirt voor €25", link: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?r=4" },
   { name: "10 beurtenkaart", price: "€125", link: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?r=1" },
-  { name: "Fundamentals 4 sessies", price: "€250" },
-  { name: "Personal Coaching", price: "€70/sessie" },
+  { name: "Fundamentals 4 sessies", price: "€250", link: "/#contact" },
+  { name: "Personal Coaching", price: "€70/sessie", link: "/#contact" },
 ];
 
 const SCHEDULE: Record<string, { time: string; class: string }[]> = {
@@ -229,12 +229,12 @@ const Groepslessen = () => {
                     {p.link && (
                       <a
                         href={p.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target={p.link.startsWith("http") ? "_blank" : "_self"}
+                        rel={p.link.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded transition-all duration-200"
                         style={{ backgroundColor: "#D4920A", color: "#000" }}
                       >
-                        Koop
+                        {p.link.startsWith("http") ? "Koop" : "Contact"}
                       </a>
                     )}
                   </div>
