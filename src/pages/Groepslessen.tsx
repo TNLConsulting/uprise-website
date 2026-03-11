@@ -15,15 +15,15 @@ const CLASS_TYPES = [
 ];
 
 const PRICES_LEFT = [
-  { name: "Maandabonnement 9 credits", price: "€85" },
-  { name: "Maandabonnement 15 credits", price: "€100" },
-  { name: "Maandabonnement Unlimited", price: "€110" },
-  { name: "Maandabonnement Open Gym", price: "€70" },
+  { name: "Maandabonnement 9 credits", price: "€85", link: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?a=7" },
+  { name: "Maandabonnement 15 credits", price: "€100", link: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?a=5" },
+  { name: "Maandabonnement Unlimited", price: "€110", link: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?a=3" },
+  { name: "Maandabonnement Open Gym", price: "€70", link: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?a=2" },
 ];
 
 const PRICES_RIGHT = [
-  { name: "Drop In", price: "€15", note: "of T-shirt voor €25" },
-  { name: "10 beurtenkaart", price: "€125" },
+  { name: "Drop In", price: "€15", note: "of T-shirt voor €25", link: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?r=4" },
+  { name: "10 beurtenkaart", price: "€125", link: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?r=1" },
   { name: "Fundamentals 4 sessies", price: "€250" },
   { name: "Personal Coaching", price: "€70/sessie" },
 ];
@@ -192,7 +192,20 @@ const Groepslessen = () => {
                   }}
                 >
                   <p className="text-sm font-semibold" style={{ color: "#F5F0E8" }}>{p.name}</p>
-                  <span className="text-lg font-black flex-shrink-0" style={{ color: "#D4920A" }}>{p.price}</span>
+                  <div className="flex items-center gap-3 flex-shrink-0">
+                    <span className="text-lg font-black" style={{ color: "#D4920A" }}>{p.price}</span>
+                    {p.link && (
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded transition-all duration-200"
+                        style={{ backgroundColor: "#D4920A", color: "#000" }}
+                      >
+                        Koop
+                      </a>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -211,7 +224,20 @@ const Groepslessen = () => {
                     <p className="text-sm font-semibold" style={{ color: "#F5F0E8" }}>{p.name}</p>
                     {p.note && <p className="text-xs mt-0.5" style={{ color: "#A09080" }}>{p.note}</p>}
                   </div>
-                  <span className="text-lg font-black flex-shrink-0" style={{ color: "#D4920A" }}>{p.price}</span>
+                  <div className="flex items-center gap-3 flex-shrink-0">
+                    <span className="text-lg font-black" style={{ color: "#D4920A" }}>{p.price}</span>
+                    {p.link && (
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded transition-all duration-200"
+                        style={{ backgroundColor: "#D4920A", color: "#000" }}
+                      >
+                        Koop
+                      </a>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
