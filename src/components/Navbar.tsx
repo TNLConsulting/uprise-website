@@ -1,6 +1,7 @@
+'use client';
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const NAV_LINKS = [
   { label: "Home", href: "/", type: "route" },
@@ -45,7 +46,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link
-            to="/"
+            href="/"
             className="flex items-center gap-1 group"
             aria-label="Uprise home"
           >
@@ -66,7 +67,7 @@ const Navbar = () => {
               link.type === "route" ? (
                 <Link
                   key={link.label}
-                  to={link.href}
+                  href={link.href}
                   className="text-sm font-medium transition-colors duration-200"
                   style={{ color: "#A09080" }}
                   onMouseEnter={(e) =>
@@ -149,7 +150,7 @@ const Navbar = () => {
               link.type === "route" ? (
                 <Link
                   key={link.label}
-                  to={link.href}
+                  href={link.href}
                   className="block text-base font-medium py-2"
                   style={{ color: "#F5F0E8" }}
                   onClick={() => setIsOpen(false)}

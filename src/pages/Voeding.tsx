@@ -1,3 +1,4 @@
+'use client';
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import ContactFooter from "@/components/ContactFooter";
