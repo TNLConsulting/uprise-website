@@ -1,3 +1,5 @@
+'use client';
+import Link from 'next/link';
 import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import ContactFooter from "@/components/ContactFooter";
@@ -163,8 +165,7 @@ const Team = () => {
         <h2 className="text-3xl md:text-4xl font-black uppercase mb-8" style={{ color: "#F5F0E8" }}>
           Contacteer ons
         </h2>
-        <a
-          href="/#contact"
+        <Link href="/#contact"
           className="inline-block px-8 py-4 text-sm font-bold tracking-[0.2em] uppercase border-2 rounded transition-all duration-300"
           style={{ borderColor: "#D4920A", color: "#D4920A" }}
           onMouseEnter={(e) => {
@@ -179,7 +180,7 @@ const Team = () => {
           }}
         >
           Contacteer ons
-        </a>
+        </Link>
       </section>
 
       <ContactFooter />

@@ -1,3 +1,4 @@
+'use client';
 interface PageHeroProps {
   eyebrow?: string;
   title: string;

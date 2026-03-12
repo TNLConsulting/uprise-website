@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+'use client';
+import Link from "next/link";
 import { Activity, Users, Layers, TrendingUp, Apple } from "lucide-react";
 
 const SERVICES = [
@@ -126,7 +127,7 @@ const ServiceCard = ({ service }: { service: typeof SERVICES[0] }) => {
   }
 
   return (
-    <Link to={service.href} className="block">
+    <Link href={service.href} className="block">
       {cardContent}
     </Link>
   );

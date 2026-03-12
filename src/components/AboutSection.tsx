@@ -1,5 +1,6 @@
+'use client';
 import { MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const AboutSection = () => {
   return (
@@ -62,7 +63,7 @@ const AboutSection = () => {
             {/* Team CTA */}
             <div className="mb-8">
               <Link
-                to="/team"
+                href="/team"
                 className="inline-block px-6 py-3 text-sm font-bold tracking-[0.2em] uppercase border-2 rounded transition-all duration-300"
                 style={{ borderColor: "#D4920A", color: "#D4920A" }}
                 onMouseEnter={(e) => {

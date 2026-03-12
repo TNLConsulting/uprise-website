@@ -1,3 +1,4 @@
+'use client';
 import { Facebook, Instagram } from "lucide-react";
 
 const HeroSection = () => {
