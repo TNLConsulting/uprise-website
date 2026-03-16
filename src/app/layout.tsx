@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { ClientProviders } from '@/components/ClientProviders'
-import { CrispChat } from '@/components/CrispChat'
+import { CookieConsent } from '@/components/CookieConsent'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="nl">
       <body>
         <ClientProviders>{children}</ClientProviders>
-        <CrispChat websiteId="a008e2fc-b8e4-4578-b3e3-b00cd870af8e" />
+        <CookieConsent />
       </body>
     </html>
   )
