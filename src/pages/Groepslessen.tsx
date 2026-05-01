@@ -26,7 +26,7 @@ const PRICES_RIGHT = [
   { name: "Drop In", price: "€15", note: "of T-shirt voor €25", link: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?r=4" },
   { name: "10 beurtenkaart", price: "€125", link: "https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?r=1" },
   { name: "Fundamentals 4 sessies", price: "€250", link: "/#contact" },
-  { name: "Personal Coaching", price: "€70/sessie", link: "/#contact" },
+  { name: "Personal Coaching", price: "€72,50/sessie", link: "/#contact" },
 ];
 
 const SCHEDULE: Record<string, { time: string; class: string }[]> = {
