@@ -39,7 +39,7 @@ export default function PrivacyPage() {
                 </p>
                 <p className="mb-2">
                   <strong>Wat doet het:</strong> Helpt ons begrijpen hoe bezoekers 
-                  onze website gebruiken (welke pagina's populair zijn, waar je 
+                  onze website gebruiken (welke pagina&apos;s populair zijn, waar je 
                   vandaan komt, etc.).
                 </p>
                 <p className="mb-2">
