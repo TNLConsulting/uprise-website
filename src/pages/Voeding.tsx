@@ -281,7 +281,7 @@ const Voeding = () => {
                 Op maat gemaakt
               </p>
               <h3 className="text-2xl md:text-3xl font-black uppercase mb-4" style={{ color: "#F5F0E8" }}>
-                Persoonlijke mealprep schema's
+                Persoonlijke mealprep schema&apos;s
               </h3>
               <p className="text-sm" style={{ color: "#A09080" }}>
                 Wekelijks voedingsplanning + boodschappenlijst. Klaar om te starten.
