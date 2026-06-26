@@ -63,6 +63,21 @@ const TEAM = [
     role: "Coach",
     photo: "https://static.wixstatic.com/media/95bc3b_98c2a53d89004a50a9b17525d5310042~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_85/photo.jpg",
   },
+  {
+    name: "Anaëlle",
+    role: "Pilates Instructrice",
+    photo: "/anaelle.jpg",
+  },
+  {
+    name: "Sanaa",
+    role: "Pilates Instructrice",
+    photo: "/sanaa.jpg",
+  },
+  {
+    name: "Shauny",
+    role: "Coach",
+    photo: "/shauny.jpg",
+  },
 ];
 
 interface TeamMember {
