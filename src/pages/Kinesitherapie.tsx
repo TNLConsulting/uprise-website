@@ -222,7 +222,7 @@ const Kinesitherapie = () => {
           Plan je afspraak
         </h2>
         <a
-          href="https://altagenda.crossuite.com/Uprise/l/n5r4v5z5j454t2e48454/o/54135474r253p2d4a454c4"
+          href="https://altagenda.crossuite.com/Uprise/step2"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-8 py-4 text-sm font-bold tracking-[0.2em] uppercase rounded transition-all duration-300"
