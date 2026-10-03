@@ -16,7 +16,7 @@ const NAV_LINKS = [
 const CTA_BUTTONS = [
   {
     label: "KINÉ AFSPRAAK",
-    href: "https://altagenda.crossuite.com/Uprise/step2",
+    href: "https://book.crossuite.app/e061032e-5000-44f2-b893-35ac2ce1f967/select-treatment",
   },
   {
     label: "GRATIS PROEFLES",
