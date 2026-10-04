@@ -3,6 +3,12 @@ import Navbar from "@/components/Navbar";
 import PageHero from "@/components/PageHero";
 import ContactFooter from "@/components/ContactFooter";
 
+interface TeamMember {
+  name: string;
+  role: string;
+  photo: string;
+}
+
 const SERVICES = [
   {
     icon: "🩹",
@@ -18,6 +24,24 @@ const SERVICES = [
     icon: "💆",
     title: "Sportmassage",
     text: "Heb je binnenkort een sportwedstrijd of zijn je spieren overtraind? Boek een sportmassage bij ons. (geen wellness massage of dry needling)",
+  },
+];
+
+const KINESIOTHERAPISTS: TeamMember[] = [
+  {
+    name: "Laura Quirin",
+    role: "Sport Physio",
+    photo: "https://static.wixstatic.com/media/95bc3b_3cb6a7e72f494bdba992d203ea74cf9d~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85/IMG-20231005-WA0015.jpg",
+  },
+  {
+    name: "Lieselotte",
+    role: "Kinesiste",
+    photo: "/lieselotte.jpg",
+  },
+  {
+    name: "Wout",
+    role: "Kinesiste",
+    photo: "/wout.jpg",
   },
 ];
 
@@ -67,6 +91,38 @@ const PRIJZEN = [
   },
 ];
 
+const TeamCard = ({ member }: { member: TeamMember }) => (
+  <div
+    className="rounded-lg overflow-hidden flex flex-col group transition-all duration-300"
+    style={{
+      backgroundColor: "#1A1410",
+      border: "1px solid rgba(212,146,10,0.15)",
+    }}
+    onMouseEnter={(e) => {
+      (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,146,10,0.6)";
+    }}
+    onMouseLeave={(e) => {
+      (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,146,10,0.15)";
+    }}
+  >
+    <div className="w-full overflow-hidden" style={{ height: "300px" }}>
+      <img
+        src={member.photo}
+        alt={member.name}
+        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+      />
+    </div>
+    <div className="px-5 py-4">
+      <p className="text-base font-bold" style={{ color: "#F5F0E8" }}>
+        {member.name}
+      </p>
+      <p className="text-sm mt-1" style={{ color: "#A09080" }}>
+        {member.role}
+      </p>
+    </div>
+  </div>
+);
+
 const Kinesitherapie = () => {
   return (
     <div style={{ backgroundColor: "#0D0D0D", minHeight: "100vh" }}>
@@ -77,6 +133,23 @@ const Kinesitherapie = () => {
         title="KINESITHERAPIE"
         subtitle="Prehab · Revalidatie · Preventie · Sportmassage"
       />
+
+      {/* Our Kinesiotherapists */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#111111" }}>
+        <div className="max-w-6xl mx-auto">
+          <p className="text-xs font-bold tracking-[0.4em] uppercase mb-3" style={{ color: "#D4920A" }}>
+            Ons Team
+          </p>
+          <h2 className="text-2xl md:text-3xl font-black uppercase mb-10" style={{ color: "#F5F0E8" }}>
+            Kinesisten
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {KINESIOTHERAPISTS.map((member) => (
+              <TeamCard key={member.name} member={member} />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Services */}
       <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#111111" }}>
