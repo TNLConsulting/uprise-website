@@ -7,6 +7,7 @@ interface TeamMember {
   name: string;
   role: string;
   photo: string;
+  phone?: string;
 }
 
 const SERVICES = [
@@ -32,16 +33,19 @@ const KINESIOTHERAPISTS: TeamMember[] = [
     name: "Laura Quirin",
     role: "Sport Physio",
     photo: "https://static.wixstatic.com/media/95bc3b_3cb6a7e72f494bdba992d203ea74cf9d~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85/IMG-20231005-WA0015.jpg",
+    phone: "+32 499 19 94 60",
   },
   {
     name: "Lieselotte",
     role: "Kinesiste",
     photo: "/lieselotte.jpg",
+    phone: "+32 471 50 12 57",
   },
   {
     name: "Wout",
     role: "Kinesiste",
     photo: "/wout.jpg",
+    phone: "+32 473 46 76 28",
   },
 ];
 
@@ -119,6 +123,15 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
       <p className="text-sm mt-1" style={{ color: "#A09080" }}>
         {member.role}
       </p>
+      {member.phone && (
+        <a
+          href={`tel:${member.phone.replace(/\s/g, "")}`}
+          className="text-sm mt-2 transition-colors duration-200 hover:text-opacity-100"
+          style={{ color: "#D4920A" }}
+        >
+          {member.phone}
+        </a>
+      )}
     </div>
   </div>
 );
