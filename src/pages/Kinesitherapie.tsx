@@ -8,6 +8,7 @@ interface TeamMember {
   role: string;
   photo: string;
   phone?: string;
+  email?: string;
 }
 
 const SERVICES = [
@@ -34,18 +35,21 @@ const KINESIOTHERAPISTS: TeamMember[] = [
     role: "Sport Physio",
     photo: "https://static.wixstatic.com/media/95bc3b_3cb6a7e72f494bdba992d203ea74cf9d~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85/IMG-20231005-WA0015.jpg",
     phone: "+32 499 19 94 60",
+    email: "laura@uprise.be",
   },
   {
     name: "Lieselotte",
     role: "Kinesiste",
     photo: "/lieselotte.jpg",
     phone: "+32 471 50 12 57",
+    email: "lieselotte@uprise.be",
   },
   {
     name: "Wout",
     role: "Kinesiste",
     photo: "/wout.jpg",
     phone: "+32 473 46 76 28",
+    email: "wout@uprise.be",
   },
 ];
 
@@ -130,6 +134,15 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
           style={{ color: "#D4920A" }}
         >
           {member.phone}
+        </a>
+      )}
+      {member.email && (
+        <a
+          href={`mailto:${member.email}`}
+          className="text-sm block transition-colors duration-200 hover:text-opacity-100"
+          style={{ color: "#D4920A" }}
+        >
+          {member.email}
         </a>
       )}
     </div>
