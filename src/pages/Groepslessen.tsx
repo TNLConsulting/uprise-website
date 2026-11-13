@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero";
 import ContactFooter from "@/components/ContactFooter";
 
 const CLASS_TYPES = [
-  { name: "Basic", level: "Beginners" },
+  { name: "Basic", level: "Beginner Friendly" },
   { name: "WOD", level: "All levels" },
   { name: "HIIT", level: "All levels" },
   { name: "Olympic Weightlifting", level: "All levels" },
