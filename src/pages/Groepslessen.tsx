@@ -11,8 +11,9 @@ const CLASS_TYPES = [
   { name: "HIIT", level: "All levels" },
   { name: "Olympic Weightlifting", level: "All levels" },
   { name: "Gymnastics", level: "All levels" },
-  { name: "Endurance", level: "All levels" },
+  { name: "Hybrid", level: "All levels" },
   { name: "Kids", level: "6-12 jaar" },
+  { name: "Personal Coaching", level: "1 on 1 of small group" },
 ];
 
 const PRICES = [
@@ -52,9 +53,9 @@ const PRICES = [
 const SCHEDULE: Record<string, { time: string; class: string }[]> = {
   Ma: [
     { time: "07u00", class: "WOD" },
-    { time: "09u00", class: "WOD" },
+    { time: "09u00", class: "Hybrid" },
     { time: "12u00", class: "WOD" },
-    { time: "17u00", class: "WOD" },
+    { time: "17u00", class: "Olympic Lifting" },
     { time: "18u00", class: "WOD" },
     { time: "19u00", class: "WOD" },
     { time: "20u00", class: "WOD" },
@@ -63,38 +64,38 @@ const SCHEDULE: Record<string, { time: string; class: string }[]> = {
     { time: "09u00", class: "WOD" },
     { time: "18u00", class: "Basic" },
     { time: "19u00", class: "WOD" },
-    { time: "20u00", class: "ENDURANCE" },
+    { time: "20u00", class: "Hybrid" },
   ],
   Wo: [
     { time: "07u00", class: "WOD" },
     { time: "09u00", class: "WOD" },
-    { time: "12u00", class: "WOD" },
+    { time: "12u00", class: "Hybrid" },
     { time: "17u00", class: "WOD" },
     { time: "18u00", class: "WOD" },
-    { time: "19u00", class: "OLY" },
+    { time: "19u00", class: "Olympic Lifting" },
     { time: "20u00", class: "WOD" },
   ],
   Do: [
     { time: "09u00", class: "WOD" },
+    { time: "17u00", class: "HIIT" },
     { time: "18u00", class: "WOD" },
     { time: "19u00", class: "WOD" },
-    { time: "20u00", class: "GYMNASTICS" },
+    { time: "20u00", class: "Gymnastics" },
   ],
   Vr: [
     { time: "07u00", class: "WOD" },
     { time: "09u00", class: "WOD" },
     { time: "12u00", class: "HIIT" },
     { time: "17u00", class: "Basic" },
-    { time: "18u00", class: "ENDURANCE" },
+    { time: "18u00", class: "Hybrid" },
   ],
   Za: [
     { time: "09u00", class: "HIIT" },
-    { time: "10u00", class: "WOD" },
-    { time: "11u00", class: "OLY" },
+    { time: "10u00", class: "TeamWOD" },
   ],
   Zo: [
-    { time: "09u30", class: "TEAMWOD" },
-    { time: "10u30", class: "COMPETITION" },
+    { time: "09u30", class: "TeamWOD" },
+    { time: "10u30", class: "Competition" },
   ],
 };
 
@@ -225,7 +226,7 @@ const Groepslessen = () => {
                 (e.currentTarget as HTMLElement).style.color = "#D4920A";
               }}
             >
-              Al CrossFit-ervaring? Contact ons
+              Al crossfit-ervaring? Contacteer ons
             </a>
           </div>
         </div>
@@ -338,8 +339,8 @@ const Groepslessen = () => {
               <p className="text-xs font-bold tracking-[0.2em] uppercase mb-2" style={{ color: "#D4920A" }}>
                 Startpakket
               </p>
-              <div className="flex items-start justify-between">
-                <div>
+              <div className="flex items-start justify-between gap-8">
+                <div className="flex-1">
                   <h3 className="text-2xl font-black uppercase mb-2" style={{ color: "#F5F0E8" }}>
                     Fundamentals
                   </h3>
@@ -347,12 +348,12 @@ const Groepslessen = () => {
                     4 semi-private trainingen + eerste maand abonnement met 9 beurten.
                   </p>
                 </div>
-                <div className="text-right flex-shrink-0">
-                  <span className="text-3xl font-black" style={{ color: "#D4920A" }}>€249</span>
+                <div className="text-right flex-shrink-0 ml-8">
+                  <span className="block text-3xl font-black mb-2" style={{ color: "#D4920A" }}>€249</span>
                   {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                   <a
                     href="/#contact"
-                    className="mt-4 inline-block px-6 py-2 text-xs font-bold tracking-widest uppercase rounded transition-all duration-200"
+                    className="inline-block px-6 py-2 text-xs font-bold tracking-widest uppercase rounded transition-all duration-200"
                     style={{ backgroundColor: "#D4920A", color: "#000" }}
                   >
                     Contact
@@ -440,28 +441,53 @@ const Groepslessen = () => {
                 <h3 className="text-lg font-black uppercase mb-4" style={{ color: "#F5F0E8" }}>
                   Flexibel
                 </h3>
-                <div
-                  className="rounded-lg p-4 flex items-center justify-between"
-                  style={{
-                    background: "linear-gradient(145deg, #1A1410 0%, #111111 100%)",
-                    border: "1px solid rgba(212,146,10,0.12)",
-                  }}
-                >
-                  <div>
-                    <p className="text-sm font-semibold" style={{ color: "#F5F0E8" }}>Beurtenkaart</p>
-                    <p className="text-xs mt-1" style={{ color: "#A09080" }}>10 trainingen, zonder maandelijks abonnement.</p>
+                <div className="space-y-3">
+                  <div
+                    className="rounded-lg p-4 flex items-center justify-between"
+                    style={{
+                      background: "linear-gradient(145deg, #1A1410 0%, #111111 100%)",
+                      border: "1px solid rgba(212,146,10,0.12)",
+                    }}
+                  >
+                    <div>
+                      <p className="text-sm font-semibold" style={{ color: "#F5F0E8" }}>Beurtenkaart</p>
+                      <p className="text-xs mt-1" style={{ color: "#A09080" }}>10 trainingen, zonder maandelijks abonnement.</p>
+                    </div>
+                    <div className="flex items-center gap-3 flex-shrink-0">
+                      <span className="font-black" style={{ color: "#D4920A" }}>€125</span>
+                      <a
+                        href="https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?r=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded transition-all duration-200"
+                        style={{ backgroundColor: "#D4920A", color: "#000" }}
+                      >
+                        Koop
+                      </a>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3 flex-shrink-0">
-                    <span className="font-black" style={{ color: "#D4920A" }}>€125</span>
-                    <a
-                      href="https://uprise.sportbitapp.nl/web/be/registreren/lidmaatschap?r=1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded transition-all duration-200"
-                      style={{ backgroundColor: "#D4920A", color: "#000" }}
-                    >
-                      Koop
-                    </a>
+                  <div
+                    className="rounded-lg p-4 flex items-center justify-between"
+                    style={{
+                      background: "linear-gradient(145deg, #1A1410 0%, #111111 100%)",
+                      border: "1px solid rgba(212,146,10,0.12)",
+                    }}
+                  >
+                    <div>
+                      <p className="text-sm font-semibold" style={{ color: "#F5F0E8" }}>Personal Coaching</p>
+                      <p className="text-xs mt-1" style={{ color: "#A09080" }}>1 on 1 of small group trainingen.</p>
+                    </div>
+                    <div className="flex items-center gap-3 flex-shrink-0">
+                      <span className="font-black" style={{ color: "#D4920A" }}>€72,50</span>
+                      {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                      <a
+                        href="/#contact"
+                        className="px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded transition-all duration-200"
+                        style={{ backgroundColor: "#D4920A", color: "#000" }}
+                      >
+                        Contact
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
